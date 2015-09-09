@@ -11,7 +11,7 @@ ENV JAVA_VERSION_MINOR 51
 ENV JAVA_VERSION_BUILD 16
 ENV JAVA_PACKAGE       jdk
 
-RUN apk --update add coreutils curl ca-certificates tar bash && \
+RUN apk --update add coreutils procps curl ca-certificates tar bash && \
     curl -Ls https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk && \
     apk add --allow-untrusted /tmp/glibc-2.21-r2.apk && \
     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf && \

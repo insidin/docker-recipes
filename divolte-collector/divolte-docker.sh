@@ -6,7 +6,9 @@
 export DIVOLTE_KAFKA_CONNECT
 export DIVOLTE_SCHEMA_REGISTRY_CONNECT="http://$DIVOLTE_SCHEMA_REGISTRY_CONNECT"
 
-export JAVA_OPTS="$JAVA_OPTS -Dconfig.trace=loads -Dconfig.file=/etc/divolte-collector/divolte-collector.conf"
+export DIVOLTE_CONF_DIR=/etc/divolte-collector
+
+export JAVA_OPTS="$JAVA_OPTS -Dlogback.configurationFile=$DIVOLTE_CONF_DIR/logback.xml -Dconfig.trace=loads -Dconfig.file=$DIVOLTE_CONF_DIR/divolte-collector.conf"
 
 cd /opt/divolte-collector/
 
