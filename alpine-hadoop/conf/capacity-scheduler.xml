@@ -15,7 +15,7 @@
 
   <property>
     <name>yarn.scheduler.capacity.maximum-applications</name>
-    <value>10000</value>
+    <value>10</value>
     <description>
       Maximum number of applications that can be pending and running.
     </description>
