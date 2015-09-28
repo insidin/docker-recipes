@@ -1,5 +1,5 @@
 
-FROM dcd/alpine-hadoop
+FROM insidin/alpine-hadoop
 
 USER root
 
