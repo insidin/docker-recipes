@@ -11,16 +11,10 @@ ENV HADOOP_CONF_DIR $HADOOP_PREFIX/etc/hadoop
 ENV HADOOP_LOG_DIR /shared/logs
 ENV YARN_LOG_DIR /yarn
 
-ADD env/* /
-
 RUN curl -Ls http://archive.apache.org/dist/hadoop/core/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz | tar -xzf - -C /opt &&\
 	addgroup -S $GROUP -g 50 && \
     adduser -S $HADOOP_USER -G $GROUP -u 1000 && \
 	ln -s /opt/hadoop-$HADOOP_VERSION $HADOOP_PREFIX &&\
-	cat /hadoop.env >> $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh &&\
-	cat /yarn.env >> $HADOOP_PREFIX/etc/hadoop/yarn-env.sh &&\
-	cat /mapred.env >> $HADOOP_PREFIX/etc/hadoop/mapred-env.sh &&\
-	rm -Rf /*.env &&\
 	rm -Rf /opt/hadoop-$HADOOP_VERSION/share/doc &&\
 	find /opt/hadoop-$HADOOP_VERSION/share/ -name "*-sources.jar" -type f -delete &&\
 	find /opt/hadoop-$HADOOP_VERSION/share/ -name "*-tests.jar" -type f -delete &&\
