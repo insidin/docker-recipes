@@ -13,7 +13,11 @@
 		<value>resourcemgr.docker:10020</value>
 	</property>
 	<property>
-		<name>mapreduce.jobhistory.done-dir</name>
-		<value>yarn/histlog</value>
+		<name>mapreduce.map.java.opts</name>
+		<value>-Xmx256M</value>
+	</property>
+	<property>
+		<name>mapreduce.reduce.java.opts</name>
+		<value>-Xmx256M</value>
 	</property>
 </configuration>
