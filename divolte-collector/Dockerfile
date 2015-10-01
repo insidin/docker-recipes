@@ -18,4 +18,4 @@ USER $USER
 VOLUME ["/etc/divolte-collector"]
 EXPOSE 8290
 
-CMD /divolte-docker.sh
+ENTRYPOINT ["/divolte-docker.sh"]
